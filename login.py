@@ -15,32 +15,42 @@ def labelSubmitLeave(event):
 
 #登录验证
 def labelSubmitClick(event):
-    labelReminder.place(x=-500,y=560)
-    event.widget.config(text = '正在登录')
-    username = str(en.get())
-    password = ((str(ep.get()),),)
-    db = pymysql.connect(host = "localhost", user = "dan", password = "3224", db = "broadcastdb", port = 3306)
-    cursor = db.cursor()
-    cursor.execute('select psw from user where name = "%s"' % username)
-    truepassword = cursor.fetchall()
-    if truepassword == password:
-        print('right')
-    else:
-        labelReminder.place(x=67,y=560)
-        event.widget.config(text = '登  录')
-    print(truepassword == password)
-    print(truepassword)
-    print(password)
-    db.close()
+    if not (en.get() == '请输入账号' or ep.get() =='请输入密码'):
+        #move away remingder
+        labelReminder.place(x=-500,y=560)
+        #change submit text
+        event.widget.config(text = '正在登录')
+        #get enter information
+        username = str(en.get())
+        password = ((str(ep.get()),),)
+        #connect to mysql
+        db = pymysql.connect(host = "localhost", user = "dan", password = "3224", db = "broadcastdb", port = 3306)
+        cursor = db.cursor()
+        #select password from user use username
+        cursor.execute('select psw from user where name = "%s"' % username)
+        truepassword = cursor.fetchall()
+        #check the password
+        if truepassword == password:
+            #pass
+            print('right')
+        else:
+            #not pass
+            labelReminder.place(x=67,y=560)
+            event.widget.config(text = '登  录')
+        print(truepassword == password)
+        print(truepassword)
+        print(password)
+        #close the connect
+        db.close()
 
 #用户名输入框得到/失去焦点
 def entryNameFocusIn(event):
-    if en.get() == '请输入用户名':
+    if en.get() == '请输入账号':
         en.set('')
 
 def entryNameFocusOut(event):
     if en.get() == '':
-        en.set('请输入用户名')
+        en.set('请输入账号')
 
 #密码输入框得到/失去焦点
 def entryPswFocusIn(event):
@@ -79,7 +89,7 @@ canvas.place(x=0,y=0)
 #窗口中添加用户名输入框
 en = tk.StringVar()
 entryName = tk.Entry(login, textvariable = en, font = ('微软雅黑', 33), width = 12, fg = 'gray', relief = 'flat')
-en.set('请输入用户名')
+en.set('请输入账号')
 entryName.place(x=67,y=350)
 #entryName.pack(side = 'bottom')
 #得到/失去焦点
@@ -104,7 +114,7 @@ labelSubmit.bind('<Leave>',labelSubmitLeave)
 labelSubmit.bind('<Button-1>',labelSubmitClick)
 
 #窗口中放置提示标签备用
-labelReminder = tk.Label(login, text = '用户名或密码错误', font = ('微软雅黑', 10), bg = '#D8F2D5', fg = 'gray')
+labelReminder = tk.Label(login, text = '账号或密码错误', font = ('微软雅黑', 10), bg = '#D8F2D5', fg = 'gray')
 
 
 #显示窗口
