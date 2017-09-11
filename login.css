@@ -1,0 +1,83 @@
+html,body{
+    text-align: center;
+    height: 100%;
+}
+input{
+    margin: -1px auto;
+    height: 46px;
+    width: 296px;
+    font-size:18px;
+    font-family: 微软雅黑, Arial;
+    color: #666666;
+}
+button{
+    width:300px;
+    height: 50px;
+    background-color: #2364AF;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-family: 微软雅黑, Arial;
+    letter-spacing: 5px ;
+}
+button:hover{
+    background-color: #1482C8;
+}
+button:active{
+    background-color: #22aaff;
+}
+.mainBody{
+    width: 300px;
+    height: 720px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+div {
+    text-align: center;
+    font-family: 微软雅黑, Arial;
+}
+.mainLogo img{
+    width: 50%;
+}
+.mainTitle {
+    margin: 10% 0 20% 0;
+    color: #2364AF;
+    text-shadow: 3px 3px 10px #666;
+    font-size:20px;
+}
+.selectMode a{
+    color: #666666;
+    font-size: 20px;
+    letter-spacing: 5px ;
+    margin: 0 10%;
+}
+.activeMode{
+    color: #2364AF!important;
+    font-weight: bold;
+}
+.signinArea{
+    margin: 10% 0;
+    height: 200px;
+}
+.box{
+    width: 298px;
+    height: 50px;
+    border: #666666 solid 1px;
+    padding: 30px 0px ;
+    background-color: aliceblue;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px #999999;
+    font-size: 1.2em;
+    display: none;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+.footer {
+    color: #666666!important;
+    padding-top: 60px;
+}
+.footer>a:visited{color: #666666}
