@@ -1,0 +1,21 @@
+* {
+    margin: 0px;/*外边框为0*/
+    padding: 0px;/*内边框为0*/
+}
+body {
+    background-color: lightgoldenrodyellow;/*背景色*/
+}
+a:link{   /* 指正常的未被访问过的链接*/
+    text-decoration:none;
+}
+a:visited{    /*指已经访问过的链接*/
+    text-decoration:none;
+ }
+a:hover{       /*指鼠标在链接*/
+    text-decoration:none;
+}a:active{   /* 指正在点的链接*/
+     text-decoration:none;
+}
+ul {
+    list-style-type: none;    /*列表无符号*/
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/titleicon.png">
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+        <title>青阳广播电视台稿件处理系统</title>
+    <script type="text/javascript" src="static/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/login.js"></script>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="/static/login.css">
+<div class="mainBody">
+    <div class="mainLogo">
+        <img src="/static/titleicon.png" alt="青阳广播电视台" title="青阳广播电视台LOGO"/>
+    </div>
+    <div class="mainTitle">
+        <h1>青阳广播电视台稿件处理平台</h1>
+    </div>
+    <div class="signinArea">
+        <form method="post">
+            <input type="text" name="lname" maxlength="11" value={{ nameValue }}>
+            <input type={{ pswType }} name="lpsw" maxlength="10" value={{ pswValue }}>
+            <button type="submit">登录</button>
+        </form>
+        {% if error %}
+        <div>用户名或密码错误</div>
+        {% endif %}
+
+    </div>
+    <div class="footer">
+        青阳县广播电视台&copy;2017<br /><a href="http://www.miitbeian.gov.cn/">皖ICP备06004630号</a>
+    </div>
+</div>
+
+</body>
+</html>
